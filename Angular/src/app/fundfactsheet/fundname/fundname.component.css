@@ -1,0 +1,76 @@
+.container{
+    position: absolute;
+    height: 10em;
+    width: 80.2em;
+    background-color: white;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    top: 11.3em;
+    left: 7.5em;
+}
+
+h1{
+    font-weight: 400;
+    font-size: 32px;
+    left: 1.2em;
+    position: absolute;
+    top: 0.1em;
+    font-weight: bold;
+}
+
+p.desc{
+    font-weight: 400;
+    font-size: 20px;
+    left: 1.1em;
+    position: absolute;
+    top: 2.5em;
+    font-weight: bold;
+    color: rgba(24, 101, 172, 0.932);
+}
+
+p.text{
+    font-weight: 400;
+    font-size: 42px;
+    right: 4.8em;
+    position: absolute;
+    top: -0.4em;
+    font-weight: bold;
+    color: #58c3e4;
+}
+
+p.stext{
+    font-weight: 400;
+    font-size: 16px;
+    right: 13.4em;
+    position: absolute;
+    top: 3.7em;
+    font-weight: 400;
+    color: #9c9c9c;
+}
+
+p.mtext{
+    font-weight: 400;
+    font-size: 20px;
+    right: 15.4em;
+    position: absolute;
+    top: 4.5em;
+    font-weight: bold;
+    color: rgba(24, 101, 172, 0.932);
+}
+
+button {
+    font-family: "adobe-clean";
+    background-color: #5CD27C;
+    font-size: 18px;
+    font-weight: 400;
+    color: white;
+    padding: 12px 40px 12px 40px;
+    margin: 14px 0;
+    right: 1.5em;
+    top: 0.5em;
+    position: absolute;
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+}
+

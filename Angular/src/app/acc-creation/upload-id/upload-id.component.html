@@ -1,0 +1,22 @@
+<app-min-top-banner></app-min-top-banner>
+<app-toptitle-register></app-toptitle-register>
+<app-background class="upload-id"></app-background>
+<div class="wrapper">
+    <div class="inner" *ngFor="let i of stages; let x = index" [ngClass]="{'inner-large':i.name.length>15,
+    'inner-xlarge':i.name.length>18,
+    'inner-small':i.name.length<7
+    }">
+        <div class="circle" [ngClass]="{'cur-circle':x+1===1}">
+            <p class="index">{{x+1}}</p>
+        </div>
+        <p class="stage" [ngClass]="{'cur-stage':x+1===1}">{{i.name}}</p>
+        <div class="horizonline" [ngClass]="{'no-line':x+1===4}"></div>
+    </div>
+    <div class="horizonline"
+        style="width:103.9%;left:-1.5em;top:-1.5em;margin:0;border-bottom: 1.2px solid rgb(240, 240, 240);;"></div>
+    <p class="describ">{{h2}}</p>
+    <p class="instruc">Upload ID For Verification</p>
+    <app-file-upload></app-file-upload>
+    <a href="#cancel" routerLink="/login" routerLinkActive="active">cancel</a>
+    <button class="next" routerLink="/personal-i" routerLinkActive="active">Next</button>
+</div>

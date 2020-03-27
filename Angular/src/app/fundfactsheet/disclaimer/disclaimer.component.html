@@ -1,0 +1,7 @@
+<div class="container">
+    <p class="content">Please Note/Disclaimer</p>
+    <div class="horizonline"></div>
+    <div class="scrollbarcon">
+        <p *ngFor="let i of disclaimers; let x = index">{{x+1}}.&nbsp;{{i.detail}}</p>
+    </div>
+</div>

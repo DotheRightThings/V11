@@ -1,0 +1,27 @@
+button {
+    font-family: "adobe-clean";
+    font-size: 18px;
+    font-weight: bold;
+    width: auto;
+    color: #2A8AC1;
+    background-color: transparent;
+    padding: 9px 32px 7px 32px;
+    right: 6.3em;
+    top: 5.65em;
+    position: absolute;
+    border-color: #2A8AC1;
+    border-style: solid;
+    border-width: 1.5px;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+i{
+    margin-left: 8px;
+}
+
+button:hover{
+    background-color:#2A8AC1;
+    color: white;
+    transition: 0.3s;
+}

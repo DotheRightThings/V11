@@ -1,0 +1,77 @@
+.navbar {
+    margin: 0;
+    padding: 0;
+    z-index: 1000;
+    overflow: hidden;
+    background-color: #58c3e4;
+    border: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4.7em;
+    width: 100%;
+}
+    
+.navbar a,.logoImage,.navbar p {
+    float: left;
+    color: #555555;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 400;
+}
+    
+.navbar p.section{
+    font-size: 32px;
+    font-weight: bold;
+    margin-left: -0.9em;
+    margin-right: 1.5em;
+    margin-top: 0.42em;
+    color: #1659B0;
+    cursor: pointer;
+
+}
+    
+.navbar a {
+    margin-top: 1.32em;
+    margin-left: 0.4em;
+}
+    
+.navbar a:hover {
+    color: #2B8FDB;
+    font-size: 113%;
+    font-weight:bold;
+}
+    
+.logoImage {
+    width: 107px;
+    height: 39.2px;
+    overflow: hidden;
+    margin-left: 5.8em;
+    position: relative;
+    top: 0.15em;
+    cursor: pointer;
+}
+    
+.navbar button {
+    background-color: rgb(24, 101, 172);
+    font-size: 18px;
+    font-weight: 400;
+    color: white;
+    padding: 12px 27px 12px 27px;
+    margin: 14px 0;
+    right: 6.5em;
+    top: 0em;
+    position: absolute;
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+}
+    
+.navbar button i {
+    margin-right: 7px;
+    color:white;
+    font-size: 24px;
+}
+    

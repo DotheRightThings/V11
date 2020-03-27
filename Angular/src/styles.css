@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~ng-zorro-antd/date-picker/style/index.min.css";
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@font-face {
+    font-family: adobe-clean;
+    src: url('/assets/AdobeClean-Regular.ttf');
+}
+*{
+    font-family: "adobe-clean";
+}
+html{
+    zoom: 1.25;
+    /*transform: scale(0.8);*/
+}
+

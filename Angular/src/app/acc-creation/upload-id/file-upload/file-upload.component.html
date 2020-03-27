@@ -1,0 +1,26 @@
+<div class="wrapper">
+
+    <form [formGroup]="uploadForm" (ngSubmit)="submit()">
+        <!-- Select File -->
+        <input style="display:none;" type="file" accept="image/*" (change)="onFileUpload($event)" #selectFile />
+        <div class="uploadcon" (click)="selectFile.click()"><img src=".\assets\ID.jpg">
+            <p class="label">+ Upload NRIC/Passport (Front)</p>
+        </div>
+
+        <input style="display:none;" type="file" accept="image/*" (change)="onFileUpload2($event)" #selectFile2 />
+        <div class="uploadcon" (click)="selectFile2.click()" style="left:27em;"><img src=".\assets\ID.jpg">
+            <p class="label">+ Upload NRIC (Back)</p>
+        </div>
+
+        <!-- Image Preview -->
+        <div class="image-preview mb-3" *ngIf="previewUrl">
+            <img class="uploaded1" [src]="previewUrl" />
+        </div>
+
+        <div class="image-preview mb-4" *ngIf="previewUrl2">
+            <img class="uploaded2" [src]="previewUrl2" />
+        </div>
+
+    </form>
+
+</div>

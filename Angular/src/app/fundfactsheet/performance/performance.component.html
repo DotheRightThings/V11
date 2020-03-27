@@ -1,0 +1,82 @@
+<div class="container">
+    <p class="content">Fund Performance</p>
+    <div class="horizonline"></div>
+    <p class="descr">{{description}}</p>
+    <p class="instruc"><i class="fa fa-arrows-alt"
+            style="color: #777777;margin-right: 9px;  transform: rotate(45deg);font-size: 11px;top: -0.2em;position: relative;"></i>Click
+        and drag in the plot area to zoom in</p>
+    <img src="https://i.imgur.com/MJenxMq.jpg">
+
+    <p class="content" style="position:relative;top:4.5em;">Annualised Returns</p>
+    <div class="horizonline" style="position:relative;top:5em;"></div>
+    <div class="switch switch-blue">
+        <input type="radio" class="switch-input" name="view2" value="week2" id="week2" checked>
+        <label for="week2" class="switch-label switch-label-off" style="left: 0.5em;">MYR</label>
+        <input type="radio" class="switch-input" name="view2" value="month2" id="month2">
+        <label for="month2" class="switch-label switch-label-on" style="left: 1.2em;">USD</label>
+        <span class="switch-selection"></span>
+    </div>
+    <div class="innercontainer" style="top:-0.7em;position:relative;">
+        <p class="period" *ngFor="let i of annuals">{{i.time}}</p>
+    </div>
+    <p class="data" *ngFor="let i of annuals" style="color:{{i.color}};">{{i.percentage}}</p>
+    <p class="descr-small">{{analysis[0]}}</p>
+
+    <div style="top: -2.5em;position: relative;">
+        <p class="content" style="position:relative;top:-5em;">Cumulative Performance</p>
+        <div class="horizonline" style="position:relative;top:-6.9em;"></div>
+        <div class="switch switch-blue" style="top:-6.8em;">
+            <input type="radio" class="switch-input" name="view3" value="week3" id="week3" checked>
+            <label for="week3" class="switch-label switch-label-off" style="left: 0.5em;">MYR</label>
+            <input type="radio" class="switch-input" name="view3" value="month3" id="month3">
+            <label for="month3" class="switch-label switch-label-on" style="left: 1.2em;">USD</label>
+            <span class="switch-selection"></span>
+        </div>
+        <div class="innercontainer" style="top:-12.5em;position:relative;">
+            <p class="period" *ngFor="let i of cumulatives">{{i.time}}</p>
+        </div>
+        <p class="data" style="top:-12.9em;position:relative;" *ngFor="let i of cumulatives" style="color:{{i.color}};">
+            {{i.percentage}}</p>
+        <p class="descr-small" style="top: -26em;">{{analysis[1]}}</p>
+    </div>
+
+    <div style="top: -5em;position: relative;">
+        <p class="content" style="position:relative;top:-14.4em;">Calender Year Returns</p>
+        <div class="horizonline" style="position:relative;top:-18.5em;"></div>
+        <div class="switch switch-blue" style="top:-18.3em;">
+            <input type="radio" class="switch-input" name="view4" value="week4" id="week4" checked>
+            <label for="week4" class="switch-label switch-label-off" style="left: 0.5em;">MYR</label>
+            <input type="radio" class="switch-input" name="view4" value="month4" id="month4">
+            <label for="month4" class="switch-label switch-label-on" style="left: 1.2em;">USD</label>
+            <span class="switch-selection"></span>
+        </div>
+        <div class="innercontainer" style="top:-23.9em;position:relative;">
+            <p class="period" *ngFor="let i of calenders">{{i.year}}</p>
+        </div>
+        <p class="data" style="top:-17.95em;position:relative;" *ngFor="let i of calenders" style="color:{{i.color}};">
+            {{i.percentage}}</p>
+        <p class="descr-small" style="top: -34em;">{{analysis[2]}}</p>
+    </div>
+
+    <div style="top: -7.5em;position: relative;">
+        <p class="content" style="position:relative;top:-19.3em;">Historical NAV Movement</p>
+        <div class="horizonline" style="position:relative;top:-24.5em;"></div>
+        <div class="switch switch-blue" style="top:-24.3em;">
+            <input type="radio" class="switch-input" name="view5" value="week5" id="week5" checked>
+            <label for="week5" class="switch-label switch-label-off" style="left: 0.5em;">MYR</label>
+            <input type="radio" class="switch-input" name="view5" value="month5" id="month5">
+            <label for="month5" class="switch-label switch-label-on" style="left: 1.2em;">USD</label>
+            <span class="switch-selection"></span>
+        </div>
+        <div class="innercontainer" style="top:-29.9em;position:relative;">
+            <p class="period" style="width:7em;margin-right:0.94em;font-size:17px" *ngFor="let i of historicals">
+                {{i.period}}
+                <i class="material-icons-outlined">info</i>
+            </p>
+        </div>
+        <p class="data" style="position: relative;top:-23em;left:0.95em;width:5.5em;margin-right:1.25em;color:#777777;"
+            *ngFor="let i of historicals">{{i.price}}</p>
+        <p class="descr-small" style="top: -42.5em;">{{analysis[3]}}</p>
+    </div>
+
+</div>

@@ -1,0 +1,25 @@
+.container{
+    left: 0;
+    width: 100%;
+    background-color: #F6F7FA;
+    height: 42em;
+    position: absolute;
+    top: 37.7em;
+    color: #707070;
+}
+
+.container p{
+    font-size: 45px;
+    position: absolute;
+    top: 0.6em;
+    left: 2.5em;
+    color: #454545;
+}
+
+.container a{
+    font-size: 18px;
+    position: absolute;
+    top: 7.5em;
+    left: 6.3em;
+    color: #A0A0A0;
+}

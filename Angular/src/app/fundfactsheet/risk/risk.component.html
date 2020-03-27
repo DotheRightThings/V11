@@ -1,0 +1,17 @@
+<div class="container">
+    <p class="content">Risk Metrics</p>
+    <div class="horizonline"></div>
+    <div class="switch switch-blue">
+        <input type="radio" class="switch-input" name="view6" value="week6" id="week6" checked>
+        <label for="week6" class="switch-label switch-label-off" style="left: 0.5em;">MYR</label>
+        <input type="radio" class="switch-input" name="view6" value="month6" id="month6">
+        <label for="month6" class="switch-label switch-label-on" style="left: 1.2em;">USD</label>
+        <span class="switch-selection"></span>
+    </div>
+    <div class="innercontainer" style="top:-0.7em;position:relative;">
+        <p class="period" *ngFor="let i of risks">{{i.type}}</p>
+    </div>
+    <p class="data" *ngFor="let i of risks" [ngClass]="{'data-negative':i.percentage<0}">
+        {{i.percentage | number:'1.2'}}%</p>
+    <p class="descr-small">{{update2}}</p>
+</div>

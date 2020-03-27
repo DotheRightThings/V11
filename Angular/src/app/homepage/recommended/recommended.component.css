@@ -1,0 +1,24 @@
+.container{
+    left: 0;
+    width: 100%;
+    background-color: #F6F7FA;
+    height: 43em;
+    position: absolute;
+    top: 136.5em;
+    color: #707070;
+    text-align: center;
+}
+
+.container p{
+    font-size: 45px;
+    top: 1em;
+    color: #454545;
+    position: relative;
+}
+
+.container a{
+    font-size: 18px;
+    top: 0.3em;
+    color: #A0A0A0;
+    position: relative;
+}

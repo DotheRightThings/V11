@@ -1,0 +1,245 @@
+.wrapper{
+    position: absolute;
+    height: 185em;
+    width: 77.5em;
+    background-color: white;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    top: 11.3em;
+    left: 7.5em;
+    padding: 1.5em;
+}
+
+.inner{
+    position: relative;
+    display: inline-flex;
+    width: 18.5em;
+    height: 5em;
+    top: -0.74em;
+}
+
+.inner-large{
+    position: relative;
+    display: inline-flex;
+    width: 20em;
+    height: 5em;
+    top: -0.74em;
+}
+
+.inner-xlarge{
+    position: relative;
+    display: inline-flex;
+    width: 21.5em;
+    height: 5em;
+    top: -0.74em;
+}
+
+.inner-small{
+    position: relative;
+    display: inline-flex;
+    width: 16.5em;
+    height: 5em;
+    top: 0em;
+}
+
+
+.circle {
+    height: 40px;
+    width: 40px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    border: 1px solid  rgb(228, 228, 228);
+    position: absolute;
+    color: #808080;
+}
+.cur-circle {
+    background-color: rgba(24, 101, 172, 1);
+    border-radius: 50%;
+    border: none;
+    color: white;
+}
+
+.com-circle {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 1px solid   rgba(24, 101, 172, 1);
+    background-color: white;
+    color: rgba(24, 101, 172, 1);
+    cursor: pointer;
+}
+
+.com-circle i{
+    color: rgba(24, 101, 172, 1);
+}
+
+p.index{
+    position: absolute;
+    margin: none;
+    font-size: 24px;
+    left: 0.58em;
+    top: -0.65em;
+}
+
+p.stage{
+    position: relative;
+    font-size: 18px;
+    left: 3em;
+    color: #707070;
+    top: -0.3em;
+}
+
+p.cur-stage{
+    position: relative;
+    font-size: 18px;
+    left: 3em;
+    color: #707070;
+    top: -0.3em;
+    color:  rgb(16, 114, 206);
+}
+
+p.com-stage{
+    cursor: pointer;
+    left:0.66em;
+    position: relative;
+    font-size: 18px;
+    color: #707070;
+    top: -0.3em;
+    color:  rgb(16, 114, 206);
+}
+
+.horizonline {
+    border-bottom: 2.5px solid rgb(228, 228, 228);
+    width: 5em;
+    position: relative;
+    top: -3.6em;
+    left: 2.5em;
+    margin-left: 2em;
+}
+
+.no-line{
+    border: none;
+}
+
+.com-line{
+    left: -0.1em;
+    z-index:1;
+}
+
+
+p.describ{
+    position: relative;
+    font-size: 18px;
+    top: -1em;
+    color: #707070;
+}
+
+p.head{
+    position: relative;
+    font-size: 24px;
+    top: -0.5em;
+    color: rgba(24, 101, 172, 1);
+    font-weight:bold;
+}
+
+p.detail{
+    position: relative;
+    font-size: 18px;
+    top: -0.5em;
+    color: #707070;
+    width: 18em;
+}
+
+p.data{
+    position: relative;
+    margin-top: -1.2em;
+    width: 23em;
+    border-radius: 3px;
+    padding: 11.5px 20px;
+    background-color: white;
+    border: none;
+    font-weight:bold;
+    box-sizing: border-box;
+    font-family: "adobe-clean";
+    margin-left: 21.5em;
+    color: #707070;
+    font-size: 16px;
+}
+
+td.detail{
+    position: relative;
+    font-size: 18px;
+    top: -0.5em;
+    color: #707070;
+    padding-right: 3.6em;
+    width: 16em;
+}  
+
+td.data2{
+    position: relative;
+    padding: 12px;
+    top: -0.45em;
+    width: 23em;
+    border-radius: 3px;
+    background-color: white;
+    border: none;
+    font-weight:bold;
+    box-sizing: border-box;
+    font-family: "adobe-clean";
+    margin-left: 0em;
+    color: #707070;
+    font-size: 16px;
+}
+
+td{
+    height:1em;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+    color: rgba(24, 101, 172, 0.932);
+    font-weight: bold;
+    font-size: 16px;
+    position: relative;
+    top: 200.9em;
+    left: 6.8em;
+}
+
+a:hover{
+    color: rgb(54, 141, 223);
+    transition: 0.2s;
+}
+
+button.submit{
+    background-color: rgb(24, 101, 172);
+    font-size: 16px;
+    font-weight: 400;
+    color: white;
+    padding: 11px 40px 11px 40px;
+    left: 76.9em;
+    top: 200.9em;
+    position: relative;
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+button.back{
+    background-color: white;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgb(24, 101, 172);
+    padding: 11px 40px 11px 40px;
+    left: 60.8em;
+    top: 200.9em;
+    font-weight: bold;
+    position: relative;
+    border: 1.2px solid rgb(24, 101, 172);
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+
+

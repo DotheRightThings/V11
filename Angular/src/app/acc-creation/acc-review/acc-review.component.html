@@ -1,0 +1,149 @@
+<app-min-top-banner></app-min-top-banner>
+<app-toptitle-register></app-toptitle-register>
+<app-background class="acc-review"></app-background>
+<div class="wrapper">
+    <div class="inner" *ngFor="let i of stages; let x = index" [ngClass]="{'inner-large':i.name.length>15,
+    'inner-xlarge':i.name.length>18,
+    'inner-small':i.name.length<7
+    }">
+        <div class="circle" *ngIf="x+1>=4;else completed" [ngClass]="{'cur-circle':x+1===4}">
+            <p class="index">
+                {{x+1}}
+            </p>
+        </div>
+        <ng-template #completed>
+            <div class="com-circle" *ngIf="x+1===1" routerLink="/acc-creation" routerLinkActive="active">
+                <i class="fas fa-check" style="font-size:23px;left:0.35em;top:0.5em;position: relative;"></i>
+            </div>
+            <div class="com-circle" *ngIf="x+1===2" routerLink="/personal-i" routerLinkActive="active">
+                <i class="fas fa-check" style="font-size:23px;left:0.35em;top:0.5em;position: relative;"></i>
+            </div>
+            <div class="com-circle" *ngIf="x+1===3" routerLink="/other-i" routerLinkActive="active">
+                <i class="fas fa-check" style="font-size:23px;left:0.35em;top:0.5em;position: relative;"></i>
+            </div>
+        </ng-template>
+        <p class="cur-stage" *ngIf="x+1===4">{{i.name}}</p>
+        <p class="com-stage" *ngIf="x+1===1" routerLink="/acc-creation" routerLinkActive="active">{{i.name}}</p>
+        <p class="com-stage" *ngIf="x+1===2" routerLink="/personal-i" routerLinkActive="active">{{i.name}}</p>
+        <p class="com-stage" *ngIf="x+1===3" routerLink="/other-i" routerLinkActive="active">{{i.name}}</p>
+
+        <div class="horizonline" [ngClass]="{'no-line':x+1===4,'com-line':x+1<4}"></div>
+    </div>
+
+    <div style="margin-top:-0.75em;position:relative;">
+        <div class="horizonline"
+            style="width:103.9%;left:-1.5em;top:-1.5em;margin:0;border-bottom: 1.2px solid rgb(240, 240, 240);z-index:1;">
+        </div>
+        <p class="describ">{{h2}}</p>
+        <div *ngFor="let i of head_1;let x = index" style="margin-bottom: 2em;">
+            <p class="head">{{i.name}}</p>
+            <p class="detail">{{i.detail}}</p>
+            <div [ngSwitch]=x>
+                <p *ngSwitchCase="'0'" class="data" style="width:45em;top:-3.9em;">{{data[0].FATCA}}</p>
+                <p *ngSwitchCase="'1'" class="data" style="width:45em;top:-3.9em;">{{data[0].CRS}}</p>
+            </div>
+        </div>
+        <div *ngFor="let i of section_list;let x = index" style="margin-bottom:4.5em;">
+            <p class="head">{{i.section}}</p>
+            <div [ngSwitch]=x>
+                <div *ngSwitchCase="'0'">
+                    <tr *ngFor="let j of detail_1;let k = index">
+                        <td class="detail">{{j.name}}</td>
+                        <div [ngSwitch]=k>
+                            <td *ngSwitchCase="'0'" class="data2">{{data[0].account.username}}</td>
+                            <td *ngSwitchCase="'1'" class="data2">{{data[0].account.password}}</td>
+                            <td *ngSwitchCase="'2'" class="data2">{{data[0].account.sec_ques}}{{data[0].account.sec_ans}}</td>
+                        </div>
+                    </tr>
+                </div>
+                <div *ngSwitchCase="'1'">
+                    <tr *ngFor="let j of detail_2;let k =index">
+                        <td class="detail">{{j.name}}</td>
+                        <div [ngSwitch]=k>
+                            <td *ngSwitchCase="'0'" class="data2">{{data[0].personal.salutation}}</td>
+                            <td *ngSwitchCase="'1'" class="data2">{{data[0].personal.fullname}}</td>
+                            <td *ngSwitchCase="'2'" class="data2">{{data[0].personal.ic_num}}</td>
+                            <td *ngSwitchCase="'3'" class="data2">{{data[0].personal.dob}}</td>
+                            <td *ngSwitchCase="'4'" class="data2">{{data[0].personal.cob}}</td>
+                            <td *ngSwitchCase="'5'" class="data2">{{data[0].personal.nationality}}</td>
+                            <td *ngSwitchCase="'6'" class="data2">{{data[0].personal.bumi_ptr}}</td>
+                            <td *ngSwitchCase="'7'" class="data2">{{data[0].personal.race}}</td>
+                            <td *ngSwitchCase="'8'" class="data2">{{data[0].personal.gender}}</td>
+                            <td *ngSwitchCase="'9'" class="data2">{{data[0].personal.mari_status}}</td>
+                        </div>
+                    </tr>
+                </div>
+                <div *ngSwitchCase="'2'">
+                    <tr *ngFor="let j of detail_3;let k =index">
+                        <td class="detail">{{j.name}}</td>
+                        <div [ngSwitch]=k>
+                            <td *ngSwitchCase="'0'" class="data2">{{data[0].p_address.addline_1}}{{data[0].p_address.addline_2}}</td>
+                            <td *ngSwitchCase="'1'" class="data2">{{data[0].p_address.poscode}}</td>
+                            <td *ngSwitchCase="'2'" class="data2">{{data[0].p_address.town}}</td>
+                            <td *ngSwitchCase="'3'" class="data2">{{data[0].p_address.state}}</td>
+                            <td *ngSwitchCase="'4'" class="data2">{{data[0].p_address.country}}</td>
+                            <td *ngSwitchCase="'5'" class="data2">{{data[0].p_address.sameAdd}}</td>
+                        </div>
+                    </tr>
+                </div>
+                <div *ngSwitchCase="'3'">
+                    <tr *ngFor="let j of detail_4;let k =index">
+                        <td class="detail">{{j.name}}</td>
+                        <div [ngSwitch]=k *ngIf="data[0].p_address.sameAdd=='Yes'">
+                            <td *ngSwitchCase="'0'" class="data2">{{data[0].p_address.addline_1}}{{data[0].p_address.addline_2}}</td>
+                            <td *ngSwitchCase="'1'" class="data2">{{data[0].p_address.poscode}}</td>
+                            <td *ngSwitchCase="'2'" class="data2">{{data[0].p_address.town}}</td>
+                            <td *ngSwitchCase="'3'" class="data2">{{data[0].p_address.state}}</td>
+                            <td *ngSwitchCase="'4'" class="data2">{{data[0].p_address.country}}</td>
+                            <td *ngSwitchCase="'5'" class="data2">{{data[0].p_address.sameAdd}}</td>
+                        </div>
+                        <div [ngSwitch]=k *ngIf="data[0].p_address.sameAdd=='No'">
+                            <td *ngSwitchCase="'0'" class="data2">{{data[0].c_address.c_addline_1}}{{data[0].c_address.addline_2}}</td>
+                            <td *ngSwitchCase="'1'" class="data2">{{data[0].c_address.c_poscode}}</td>
+                            <td *ngSwitchCase="'2'" class="data2">{{data[0].c_address.c_town}}</td>
+                            <td *ngSwitchCase="'3'" class="data2">{{data[0].c_address.c_state}}</td>
+                            <td *ngSwitchCase="'4'" class="data2">{{data[0].c_address.c_country}}</td>
+                        </div>
+                    </tr>
+                </div>
+                <div *ngSwitchCase="'4'">
+                    <tr *ngFor="let j of detail_5;let k =index">
+                        <td class="detail">{{j.name}}</td>
+                        <div [ngSwitch]=k>
+                            <td *ngSwitchCase="'0'" class="data2">{{data[0].contact.email}}</td>
+                            <td *ngSwitchCase="'1'" class="data2">{{data[0].contact.m_cc}}{{data[0].contact.m_num}}</td>
+                            <td *ngSwitchCase="'2'" class="data2">{{data[0].contact.h_cc}}{{data[0].contact.h_num}}</td>
+                            <td *ngSwitchCase="'3'" class="data2">{{data[0].contact.o_cc}}{{data[0].contact.o_num}} (Ext:{{data[0].contact.ext}})</td>
+                        </div>
+                    </tr>
+                </div>
+                <div *ngSwitchCase="'5'">
+                    <tr *ngFor="let j of detail_6;let k =index">
+                        <td class="detail">{{j.name}}</td>
+                        <div [ngSwitch]=k>
+                            <td *ngSwitchCase="'0'" class="data2">{{data[1].occupation.soi}} ({{data[1].occupation.type}})</td>
+                            <td *ngSwitchCase="'1'" class="data2">{{data[1].occupation.occup}}</td>
+                            <td *ngSwitchCase="'2'" class="data2">{{data[1].occupation.emp_name}}</td>
+                            <td *ngSwitchCase="'3'" class="data2">{{data[1].occupation.emp_loc}}</td>
+                            <td *ngSwitchCase="'4'" class="data2">{{data[1].occupation.nob}}</td>
+                            <td *ngSwitchCase="'5'" class="data2">{{data[1].occupation.annual_incs}}</td>
+                            <td *ngSwitchCase="'6'" class="data2">{{data[1].occupation.net_w}}</td>
+                        </div>
+                    </tr>
+                </div>
+                <div *ngSwitchCase="'6'">
+                    <tr *ngFor="let j of detail_7;let k =index">
+                        <td class="detail">{{j.name}}</td>
+                        <div [ngSwitch]=k>
+                            <td *ngSwitchCase="'0'" class="data2">{{data[1].agent.pref_agt}}</td>
+                            <td *ngSwitchCase="'1'" class="data2">{{data[1].agent.agt_code}}</td>
+                        </div>
+                    </tr>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<a href="#cancel" routerLink="/login" routerLinkActive="active">cancel</a>
+<button class="submit" routerLink="/homepage" routerLinkActive="active">Submit</button>
+<button class="back" routerLink="/other-i" routerLinkActive="active">Back</button>

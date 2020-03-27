@@ -1,0 +1,31 @@
+.container{
+    height: 203em;
+    width: 100%;
+    background-color: #F6F7FA;
+    position: absolute;
+    left: 0;
+    top: 13.7em;
+}
+
+:host-context(.upload-id) .container{
+    height: 34.7em;
+}
+
+:host-context(.personal-i) .container{
+    height: 183em;
+}
+
+:host-context(.personal-i-extends) .container{
+    top:183em;
+    height: 48.5em;
+}
+   
+:host-context(.other-i) .container{
+    height: 75em;
+}
+
+:host-context(.acc-review) .container{
+    height: 195.7em;
+}
+   
+   

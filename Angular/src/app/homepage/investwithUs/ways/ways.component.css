@@ -1,0 +1,59 @@
+.container{
+    height: 26em;
+    width: 22.85em;
+    border: 1.8px solid #F0F0F0;
+    border-radius: 8px;
+    padding: 1.44em;
+    background-color: white;
+    position: relative;
+    display: inline-flex;
+    margin: 0.71em;
+    top: 10.8em;
+    left: 5.6em;
+}
+
+h1{
+    font-size: 34px;
+    position: absolute;
+    top: 3.1em;
+    color: #555555;
+}
+
+p,a{
+    font-size: 20px;
+    color: #757575;
+    position: absolute;
+    top: 8.2em;
+    margin-right: 1.4em;
+}
+
+a{
+    position: relative;
+    top: 14em;
+    left: -4.3em;
+}
+
+img{
+    position: relative;
+    height: 5.4em;
+    width: 5.4em;
+}
+
+.circle {
+    height: 44px;
+    width: 44px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 1.5px solid #2A8AC1;
+    position:absolute;
+    top: 28.25em;
+    right: 1.8em;
+    color: #2A8AC1;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.circle:hover{
+    transform: scale(1.1);
+    transition: 0.3s;
+}

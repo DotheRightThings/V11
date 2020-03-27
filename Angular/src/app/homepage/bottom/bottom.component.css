@@ -1,0 +1,25 @@
+.bottomline{
+    background-color: white;
+    color: #2A8AC1;
+    position: relative;
+    top: 137.5em;
+    height: 2.5em;
+    border-top: 3px solid #F0F0F0;
+    width: 100%;
+    left: 0;
+}
+
+.bottomline a{
+    font-size: 14px;
+    top: 0.75em;
+    left: 8.2em;
+    position: relative;
+    font-weight: 400;
+}
+
+i{
+    top: 0.87em;
+    left: 10em;
+    position: relative;
+    font-size: 11px;
+}

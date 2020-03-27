@@ -1,0 +1,49 @@
+.finderbar {
+    margin: 0;
+    padding: 0;
+    background-color: #58c3e4;
+    border: none;
+    position: absolute;
+    height: 8.5em;
+    left: 0;
+    top: 128em;
+    background-image: linear-gradient(to right, #58c3e4, rgba(24, 101, 172, 1));
+    width: 100%;
+}
+
+.search {
+    background-color: white;
+    left: 19.5em;
+    top: 2.7em;
+    position: absolute;
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+    padding: 12px 1.5em 12px 2.5em;
+}
+
+.content,a{
+    font-family: "adobe-clean";
+    font-size: 18px;
+    font-weight: 400;
+    color: #909090;
+    left: 0em;
+    top: 0.15em;
+}
+
+select{
+    border: none;
+    margin-left: 1em;
+    padding: 0em 43em 0 0;
+    font: 18px;
+    position: relative;
+}
+
+h1{
+    font-size: 34px;
+    top: 0.8em;
+    left: 3.2em;
+    font-weight: 400;
+    color: #F3F3F3;
+    position: absolute;
+}

@@ -1,0 +1,14 @@
+<div class="container">
+    <p class="content">Top Fund Performance</p>
+    <div class="horizonline"></div>
+    <div class="outer" *ngFor="let i of funds; let x = index" [ngClass]="{'outer-large':i.name.length>37}">
+        <div class="indexing">{{x+1}}</div>
+        <div class="inner">
+            <p class="section">{{i.name}}</p>
+            <p class="data" [ngClass]="{'data-negative':i.percent<0}">{{i.percent | number:'1.2'}}%<i
+                    class="fa fa-caret-up" style="font-size: 32px;margin-left: 0.2em;position:relative;top:0.15em;"
+                    [ngClass]="{'negative':i.percent<0}"></i></p>
+        </div>
+    </div>
+    <p class="descr-small">{{update}}</p>
+</div>

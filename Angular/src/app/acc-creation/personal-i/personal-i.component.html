@@ -1,0 +1,247 @@
+<app-min-top-banner></app-min-top-banner>
+<app-toptitle-register></app-toptitle-register>
+<app-background class="personal-i"></app-background>
+<form [formGroup]="personal_i_Form" (ngSubmit)="onSubmit()">
+    <div class="wrapper" style="z-index: 1;">
+        <div class="inner" *ngFor="let i of stages; let x = index" [ngClass]="{'inner-large':i.name.length>15,
+        'inner-xlarge':i.name.length>18,
+        'inner-small':i.name.length<7
+        }">
+            <div class="circle" *ngIf="x+1>=2;else completed" [ngClass]="{'cur-circle':x+1===2}">
+                <p class="index">
+                    {{x+1}}
+                </p>
+            </div>
+            <ng-template #completed>
+                <div class="com-circle" routerLink="/acc-creation" routerLinkActive="active">
+                    <i class="fas fa-check" style="font-size:23px;left:0.35em;top:0.5em;position: relative;"></i>
+                </div>
+            </ng-template>
+            <p class="stage" *ngIf="x+1>2">{{i.name}}</p>
+            <p class="cur-stage" *ngIf="x+1===2">{{i.name}}</p>
+            <p class="com-stage" *ngIf="x+1<2" routerLink="/acc-creation" routerLinkActive="active">{{i.name}}</p>
+            <div class="horizonline" [ngClass]="{'no-line':x+1===4,'com-line':x+1<2}"></div>
+        </div>
+        <div style="margin-top:-0.75em;position:relative;">
+            <div class="horizonline"
+                style="width:103.9%;left:-1.5em;top:-1.5em;margin:0;border-bottom: 1.2px solid rgb(240, 240, 240);z-index:1;">
+            </div>
+            <p class="describ">{{h2}}</p>
+
+            <div *ngFor="let i of head_list; let x = index" style="margin-bottom: -1.5em;">
+                <p class="head">{{i.name}}</p>
+                <p class="detail">{{i.detail}}</p>
+                <div *ngIf="x===0;else second">
+                    <label class="container" *ngFor="let i of list_1">{{i.type}}
+                        <input type="radio" formControlName="FATCA" value={{i.type}}>
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <ng-template #second>
+                    <label class="container" *ngFor="let i of list_2" style="top: -5.5em;">{{i.type}}
+                        <input type="radio" formControlName="CRS" value={{i.type}}>
+                        <span class="checkmark"></span>
+                    </label>
+                </ng-template>
+            </div>
+
+            <p class="head">Account Information
+            </p>
+            <div formGroupName="account" *ngFor="let i of account_i" style="margin-bottom: -4em;">
+                <p class="detail">{{i.name}}</p>
+                <div *ngIf="i.name==='Username* :'">
+                    <input type="text" formControlName="username" placeholder="Enter your lovely username"
+                        [ngClass]="{'has-error':username.touched && username.errors, 'has-success':username.valid}" />
+                    <i class="far fa-user"></i>
+                    <div *ngIf="username.touched && username.errors"
+                        style="top:-4.8em;left:21.5em;position:relative;color:red;width:15em;">
+                        <div *ngIf="username.errors.required">Username is required</div>
+                    </div>
+                </div>
+
+                <div *ngIf="i.name==='Password* :'||i.name==='Confirm Password* :'">
+                    <input *ngIf="i.name==='Password* :'" type="password" formControlName="password"
+                        [ngClass]="{'has-error':password.touched && password.errors, 'has-success':password.valid}">
+                    <input *ngIf="i.name==='Confirm Password* :'" type="password" formControlName="con_password"
+                        [ngClass]="{'has-error':con_password.touched && con_password.errors, 'has-success':con_password.valid}">
+                    <i class="material-icons-outlined" style="top:-3.4em;font-size:20px;left:-25.55em;">lock</i>
+                    <i class="far fa-eye-slash"
+                        style="cursor:pointer;top:-4.35em;font-size:20px;transform: scaleX(-1);left:-15.7em;font-size:16px"></i>
+                    <p class="password" *ngIf="i.name==='Password* :'">Use 8 or more characters with a mix of letters,
+                        numbers & symbols</p>
+                    <div *ngIf="password.touched && password.errors && i.name==='Password* :'"
+                        style="top:-4.8em;left:21.5em;position:relative;color:red;width:15em;">
+                        <div *ngIf="password.errors.required">Password is required</div>
+                    </div>
+                    <div *ngIf="con_password.touched && con_password.errors && i.name==='Confirm Password* :'"
+                        style="top:-4.8em;left:21.5em;position:relative;color:red;width:15em;">
+                        <div *ngIf="con_password.errors.required">Confirm Password is required</div>
+                    </div>
+                    <div style="top:-4.8em;left:21.5em;position:relative;color:red;width:15em;"
+                        *ngIf="password.value !== con_password.value && con_password.value !== ''">
+                        Password does not match
+                    </div>
+                </div>
+                <div *ngIf="i.name==='Security Question* :'">
+                    <select class="content" formControlName="sec_ques">
+                        <option *ngFor="let i of security_q" value={{i.question}}>{{i.question}}</option>
+                    </select>
+                    <input type="text" formControlName="sec_ans" style="padding-left: 1.2em;">
+                </div>
+            </div>
+
+            <p class="head" style="margin-top:2.5em;">Personal Information</p>
+            <div formGroupName="personal" *ngFor="let i of personal_i" style="margin-bottom: -4em;">
+                <p class="detail">{{i.name}}</p>
+                <select class="content" style="width:6em;" *ngIf="i.name==='Salutation* :'"
+                    formControlName="salutation">
+                    <option *ngFor="let i of salutations" value={{i.salutes}}>{{i.salutes}}</option>
+                </select>
+                <input type="text" placeholder="wernsheng" formControlName="fullname" style="padding-left: 1.2em;"
+                    *ngIf="i.name==='Full Name (as per NRIC/Passport)* :'">
+                <input type="text" placeholder="940512065234" formControlName="ic_num"
+                    style="padding-left: 1.2em;;top:-5.7em;margin-bottom: -0.4em;"
+                    *ngIf="i.name==='NRIC Number/Passport (non Malaysian citizen)* :'">
+                <input type="date" placeholder="940512065234" formControlName="dob" style="padding-left: 1.2em"
+                    *ngIf="i.name==='Date of Birth* :'">
+                <select class="content" *ngIf="i.name==='Country of Birth* :'" formControlName="cob">
+                    <option *ngFor="let i of countries" value={{i.country}}>
+                        {{i.country}}</option>
+                </select>
+                <select class="content" *ngIf="i.name==='Nationality* :'" formControlName="nationality">
+                    <option *ngFor="let i of nationalities" value={{i.nationality}}>{{i.nationality}}</option>
+                </select>
+                <div *ngIf="i.name==='Bumiputera Status* :'">
+                    <label class="container" style="top:-3em;margin-left:-0.2em;color:#707070;">Yes
+                        <input type="radio" value="Yes" formControlName="bumi_ptr">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container" style="top:-5.4em;margin-left:8em;color:#707070;">No
+                        <input type="radio" value="No" formControlName="bumi_ptr">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <select class="content" *ngIf="i.name==='Race* :'" formControlName="race">
+                    <option *ngFor="let i of races" value={{i.races}}>{{i.race}}
+                    </option>
+                </select>
+                <div *ngIf="i.name==='Gender* :'">
+                    <label class="container" style="top:-3em;margin-left:-0.2em;color:#707070;">Male
+                        <input type="radio" value="Male" name="gender" formControlName="gender">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container" style="top:-5.4em;margin-left:8em;color:#707070;">Female
+                        <input type="radio" value="Female" name="gender" formControlName="gender">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <select class="content" *ngIf="i.name==='Marital Status* :'" formControlName="mari_status">
+                    <option *ngFor="let i of mar_status" value={{i.status}}>{{i.status}}</option>
+                </select>
+            </div>
+
+            <p class="head" style="margin-top:2.5em;">Permanent Address</p>
+            <div formGroupName="p_address" *ngFor="let i of address_i" style="margin-bottom: -4em;">
+                <p class="detail">{{i.name}}</p>
+                <input type="text" placeholder="Level 22, iFast Service Centre Sdn Bhd" formControlName="addline_1"
+                    style="padding-left: 1.2em;" *ngIf="i.name==='Address Line 1* :'">
+                <input type="text" placeholder="30 Jalan Sultan Ismail" formControlName="addline_2"
+                    style="padding-left: 1.2em;" *ngIf="i.name==='Address Line 2 :'">
+                <input type="text" placeholder="Address Line 3 (optional)" name="addline3" style="padding-left: 1.2em;"
+                    *ngIf="i.name==='Address Line 3 :'">
+                <input type="text" placeholder="50250" formControlName="poscode" style="padding-left: 1.2em;width:6em;"
+                    *ngIf="i.name==='Postal Code* :'">
+                <input type="text" placeholder="Kuala Lumpur" formControlName="town" style="padding-left: 1.2em;"
+                    *ngIf="i.name==='Town/City* :'">
+                <select class="content" *ngIf="i.name==='State* :'" formControlName="state">
+                    <option *ngFor="let i of states" value={{i.state}}>
+                        {{i.state}}</option>
+                </select>
+                <select class="content" *ngIf="i.name==='Country* :'" formControlName="country">
+                    <option *ngFor="let i of countries_C" value={{i.country}}>{{i.country}}</option>
+                </select>
+                <div *ngIf="i.name==='Is your correspondence address same as your permanent address?* :'">
+                    <label class="container" style="top:-3em;margin-left:-0.2em;color:#707070;">Yes
+                        <input type="radio" formControlName="sameAdd" value="Yes">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container" style="top:-5.4em;margin-left:8em;color:#707070;">No
+                        <input type="radio" formControlName="sameAdd" value="No">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div formGroupName="c_address" *ngIf="personal_i_Form.value.p_address.sameAdd==='No'">
+                <p class="head" style="margin-top:2.5em;">Correspondence Address</p>
+                <div *ngFor="let i of address_i | slice:0:7" style="margin-bottom: -4em;">
+                    <p class="detail">{{i.name}}</p>
+                    <input type="text" placeholder="Level 22, iFast Service Centre Sdn Bhd"
+                        formControlName="c_addline_1" style="padding-left: 1.2em;" *ngIf="i.name==='Address Line 1* :'">
+                    <input type="text" placeholder="30 Jalan Sultan Ismail" formControlName="c_addline_2"
+                        style="padding-left: 1.2em;" *ngIf="i.name==='Address Line 2 :'">
+                    <input type="text" placeholder="Address Line 3 (optional)" name="addline3"
+                        style="padding-left: 1.2em;" *ngIf="i.name==='Address Line 3 :'">
+                    <input type="text" placeholder="50250" formControlName="c_poscode"
+                        style="padding-left: 1.2em;width:6em;" *ngIf="i.name==='Postal Code* :'">
+                    <input type="text" placeholder="Kuala Lumpur" formControlName="c_town" style="padding-left: 1.2em;"
+                        *ngIf="i.name==='Town/City* :'">
+                    <select class="content" *ngIf="i.name==='State* :'" value={{i.state}} formControlName="c_state">
+                        <option *ngFor="let i of states">
+                            {{i.state}}</option>
+                    </select>
+                    <select class="content" *ngIf="i.name==='Country* :'" formControlName="c_country">
+                        <option *ngFor="let i of countries_C" value={{i.country}}>{{i.country}}</option>
+                    </select>
+                </div>
+            </div>
+
+            <p class="head" style="margin-top:2.5em;">Contact Information</p>
+            <div formGroupName="contact" *ngFor="let i of contact_i" style="margin-bottom: -4em;">
+                <p class="detail">{{i.name}}</p>
+
+                <input type="text" placeholder="wernsheng@gmail.com" formControlName="email"
+                    style="padding-left: 1.2em;" *ngIf="i.name==='Email Address* :'">
+                <div *ngIf="i.name==='Mobile Number* :'">
+                    <select class="content"
+                        style="width:4.6em;top:-4.4em;border-top-right-radius: 0;border-bottom-right-radius: 0;padding-right:0;"
+                        formControlnaNe="m_cc">
+                        <option *ngFor="let i of country_codes" value={{i.code}}>
+                            {{i.code}}</option>
+                    </select>
+                    <input type="text" placeholder="169434494" formControlName="m_num"
+                        style="margin-left:0;padding-left: 1.2em;width:16.4em;border-left:none;border-top-left-radius: 0;border-bottom-left-radius: 0;">
+                </div>
+                <div *ngIf="i.name==='Residence/House Number :'">
+                    <select class="content"
+                        style="width:4.6em;top:-4.4em;border-top-right-radius: 0;border-bottom-right-radius: 0;padding-right:0;"
+                        formControlName="h_cc">
+                        <option *ngFor="let i of country_codes" value={{i.code}}>
+                            {{i.code}}</option>
+                    </select>
+                    <input type="text" placeholder="139567794" formControlName="h_num"
+                        style="margin-left:0;padding-left: 1.2em;width:16.4em;border-left:none;border-top-left-radius: 0;border-bottom-left-radius: 0;">
+                </div>
+                <div *ngIf="i.name==='Office Number :'">
+                    <select class="content"
+                        style="width:4.6em;top:-4.4em;border-top-right-radius: 0;border-bottom-right-radius: 0;padding-right:0;"
+                        formControlName="o_cc">
+                        <option *ngFor="let i of country_codes" value={{i.code}}>
+                            {{i.code}}</option>
+                    </select>
+                    <input type="text" placeholder="199934786" formControlName="o_num"
+                        style="margin-left:0;padding-left: 1.2em;width:16.4em;border-left:none;border-top-left-radius: 0;border-bottom-left-radius: 0;">
+                    <input type="text" placeholder="8392" formControlName="ext"
+                        style="margin-left:4em;padding-left: 1.2em;width:6em;">
+                    <p class="detail" style="left:39em;top:-7.5em;width:3em;">Ext: </p>
+                </div>
+            </div>
+        </div>
+        <a href="#cancel" routerLink="/login" routerLinkActive="active">cancel</a>
+        <button class="next" type="submit" (click)="onSubmit()" [disabled]="!personal_i_Form.valid"
+            routerLink="/other-i" routerLinkActive="active">Next</button>
+        <button class="back" type="button" routerLink="/acc-creation" routerLinkActive="active">Back</button>
+    </div>
+</form>
+<app-background *ngIf="personal_i_Form.value.p_address.sameAdd==='No'" class="personal-i-extends" style="z-index: -1;">
+</app-background>

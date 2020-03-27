@@ -1,0 +1,12 @@
+<div class="container">
+    <p class="content">Announcement</p>
+    <div class="horizonline"></div>
+    <div class="inner" *ngFor="let i of announcements">
+        <p class="section">{{i.name}}</p>
+    </div>
+    <div class="datacon" *ngFor="let i of announcements">
+        <p class="data">{{i.detail}}</p>
+    </div>
+    <p class="descr-small">{{notices[0]}}</p>
+    <p class="descr-small" style="top:-13.5em">{{notices[1]}}</p>
+</div>

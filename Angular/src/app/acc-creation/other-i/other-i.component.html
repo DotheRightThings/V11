@@ -1,0 +1,96 @@
+<app-min-top-banner></app-min-top-banner>
+<app-toptitle-register></app-toptitle-register>
+<app-background class="other-i"></app-background>
+<form [formGroup]="other_i_Form" (ngSubmit)="onSubmit()">
+    <div class="wrapper">
+        <div class="inner" *ngFor="let i of stages; let x = index" [ngClass]="{'inner-large':i.name.length>15,
+        'inner-xlarge':i.name.length>18,
+        'inner-small':i.name.length<7
+        }">
+            <div class="circle" *ngIf="x+1>=3;else completed" [ngClass]="{'cur-circle':x+1===3}">
+                <p class="index">
+                    {{x+1}}
+                </p>
+            </div>
+            <ng-template #completed>
+                <div class="com-circle" *ngIf="x+1===1" routerLink="/acc-creation" routerLinkActive="active">
+                    <i class="fas fa-check" style="font-size:23px;left:0.35em;top:0.5em;position: relative;"></i>
+                </div>
+                <div class="com-circle" *ngIf="x+1===2" routerLink="/personal-i" routerLinkActive="active">
+                    <i class="fas fa-check" style="font-size:23px;left:0.35em;top:0.5em;position: relative;"></i>
+                </div>
+            </ng-template>
+            <p class="stage" *ngIf="x+1>3">{{i.name}}</p>
+            <p class="cur-stage" *ngIf="x+1===3">{{i.name}}</p>
+            <p class="com-stage" *ngIf="x+1===1" routerLink="/acc-creation" routerLinkActive="active">{{i.name}}</p>
+            <p class="com-stage" *ngIf="x+1===2" routerLink="/personal-i" routerLinkActive="active">{{i.name}}</p>
+            <div class="horizonline" [ngClass]="{'no-line':x+1===4,'com-line':x+1<3}"></div>
+        </div>
+
+        <div style="margin-top:-0.75em;position:relative;">
+            <div class="horizonline"
+                style="width:103.9%;left:-1.5em;top:-1.5em;margin:0;border-bottom: 1.2px solid rgb(240, 240, 240);z-index:1;">
+            </div>
+            <p class="describ">{{h2}}</p>
+
+            <p class="head">Other Information</p>
+            <p class="detail">{{other_i}}'s Maiden Name :</p>
+            <input type="text" placeholder="wenqing" style="padding-left: 1.2em;" required *ngIf="other_i==='Mother'"
+                formControlName="mm_name">
+
+            <p class="head" style="margin-top:0em;">Occupation Information</p>
+            <div formGroupName="occupation" *ngFor="let i of occup_i" style="margin-bottom: -4em;">
+                <p class="detail">{{i.name}}</p>
+                <div *ngIf="i.name==='Source of Income* :'">
+                    <select class="content" formControlName="soi" >
+                        <option *ngFor="let i of source_of_inc" value={{i.type}}>{{i.type}}</option>
+                    </select>
+                    <select class="content" style="top:-4.5em;left:-21em;width: 10em;" formControlName="type"
+                       >
+                        <option *ngFor="let i of type_of_inc" value={{i.type}}>{{i.type}}</option>
+                    </select>
+                </div>
+                <select class="content" *ngIf="i.name==='Occupation* :'" formControlName="occup" >
+                    <option *ngFor="let i of occupations" value={{i.type}}>{{i.type}}</option>
+                </select>
+                <input type="text" placeholder="iFast Service Centre Sdn Bhd" formControlName="emp_name"
+                     style="padding-left: 1.2em;" required
+                    *ngIf="i.name==='Name of Employer / Business* :'">
+                <select class="content" *ngIf="i.names==='Employer'" formControlName="emp_loc" >
+                    <option *ngFor="let i of offices_loc" value={{i.type}}>{{i.type}}</option>
+                </select>
+                <select class="content" *ngIf="i.name==='Nature of Business* :'" formControlName="nob" >
+                    <option *ngFor="let i of nature_of_bus" value={{i.type}}>{{i.type}}</option>
+                </select>
+                <select class="content" *ngIf="i.name==='Annual Income* :'" formControlName="annual_incs"
+                    >
+                    <option *ngFor="let i of annual_inc" value={{i.range}}>{{i.range}}</option>
+                </select>
+                <select class="content" *ngIf="i.name==='Estimate Net Worth* :'" formControlName="net_w">
+                    <option *ngFor="let i of net_worth" value={{i.range}}>{{i.range}}</option>
+                </select>
+            </div>
+
+            <p class="head" style="margin-top:2.5em;">Servicing Agent</p>
+            <div formGroupName="agent" *ngFor="let i of serv_ag" style="margin-bottom: -4em;">
+                <p class="detail">{{i.name}}</p>
+                <div *ngIf="i.name==='Do you have a preferred Agent?* :'">
+                    <label class="container" style="top:-3em;margin-left:-0.2em;color:#707070;">Yes
+                        <input type="radio" checked="checked" formControlName="pref_agt" value="Yes">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container" style="top:-5.4em;margin-left:8em;color:#707070;">No
+                        <input type="radio" checked="checked" formControlName="pref_agt"value="No">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <input type="text" placeholder="R053414" name="ag-code" style="padding-left: 1.2em;width:7em;"
+                    *ngIf="i.name==='Agent Code :'" formControlName="agt_code">
+            </div>
+        </div>
+        <a href="#cancel" routerLink="/login" routerLinkActive="active">cancel</a>
+        <button class="next" type="button" (click)="onSubmit();" routerLink="/acc-review"
+            routerLinkActive="active">Next</button>
+        <button class="back" type="button" routerLink="/personal-i" routerLinkActive="active">Back</button>
+    </div>
+</form>

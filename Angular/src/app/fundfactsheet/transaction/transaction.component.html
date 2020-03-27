@@ -1,0 +1,12 @@
+<div class="container">
+    <p class="content">Transaction Information</p>
+    <div class="horizonline"></div>
+    <div class="inner" *ngFor="let i of transactions">
+        <p class="section">{{i.name}}</p>
+    </div>
+    <div class="datacon" *ngFor="let i of transactions">
+        <p class="data">{{i.detail}}</p>
+    </div>
+    <p class="descr-small" style="top: -37.9em;font-weight:bold;color:#8b8b8b;">Distribution Policy</p>
+    <p class="descr-small">{{policy}}</p>
+</div>

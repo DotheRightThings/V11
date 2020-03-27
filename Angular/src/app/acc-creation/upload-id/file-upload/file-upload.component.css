@@ -1,0 +1,56 @@
+.uploadcon{
+    background-color: transparent;
+    width: 24em;
+    height: 14em;
+    position: absolute;
+    top: 12.5em;
+    border: 2px;
+    cursor: pointer;
+    border: 1.2px dashed rgb(236, 236, 236);
+    text-align: center;
+    z-index: 0;
+}
+
+.uploadcon:hover{
+    border-color:rgba(39, 111, 194, 0.527);
+    transition: 0.8s;
+}
+
+img{
+    width: 90px;
+    height: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 3em;
+}
+
+p.label{
+    font-size: 20px;
+    color: #a5a5a5;
+}
+
+img.uploaded1{
+    width: 24em;
+    height: 14em;
+    position: absolute;
+    top: 9.6em;
+    border: 2px;
+    cursor: pointer;
+    margin-left: 1.4em;
+    z-index: 1;
+}
+
+img.uploaded2{
+    width: 24em;
+    height: 14em;
+    position: absolute;
+    top: 9.6em;
+    border: 2px;
+    cursor: pointer;
+    margin-left: 1.4em;
+    left: 25.5em;
+    z-index: 1;
+}
+
+

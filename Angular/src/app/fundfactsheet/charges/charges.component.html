@@ -1,0 +1,10 @@
+<div class="container">
+    <p class="content">Charges</p>
+    <div class="horizonline"></div>
+    <div class="inner" *ngFor="let i of charges">
+        <p class="section">{{i.name}}</p>
+    </div>
+    <div class="datacon" *ngFor="let i of charges">
+        <p class="data">{{i.detail}}</p>
+    </div>
+</div>

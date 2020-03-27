@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="inputcontainer">
+        <a>I want to invest</a>
+        <a class="amount">MYR</a>
+        <a class="amount" style="color:#707070; left: 3.2em">{{values}}</a>
+    </div>
+    <div class="slidecontainer">
+        <input (click)="onKey($event)" type="range" min="100" max="1000000" value="2000" class="slider" id="myRange">
+        <a>MYR 100</a>
+        <a style="left: 19.59em;">MYR 1,000,000</a>
+    </div>
+    <div class="inputcontainer" style="top:11em;">
+        <a>For a period of</a>
+        <select class="content">
+            <option *ngFor="let i of periods">{{i.name}}</option>
+        </select>
+    </div>
+    <div class="inputcontainer" style="top:16em;">
+        <a>My risk level</a>
+        <select class="content" style="padding-right:12.75em;">
+            <option *ngFor="let i of risks">{{i.name}}</option>
+        </select>
+    </div>
+    <button>Reset</button>
+</div>

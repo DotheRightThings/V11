@@ -1,0 +1,68 @@
+.container{
+    position: absolute;
+    height: 22.7em;
+    width: 52.85em;
+    background-color: white;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    top: 189.4em;
+    left: 7.5em;
+}
+p.content{
+    font-weight: 400;
+    font-size: 20px;
+    left: 1.1em;
+    position: absolute;
+    top: 0.3em;
+    font-weight: bold;
+    color: #454545;
+}
+
+.horizonline {
+    border-bottom: 1.8px solid rgb(236, 236, 236);
+    width: 50em;
+    position: absolute;
+    top: 3.7em;
+    left: 1.4em;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgb(231, 231, 231);
+    border-radius: 25px;
+
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 25px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+.scrollbarcon{
+    width: 50em;
+    left: 1.5em;
+    margin-top: 6.5em;
+    height: 13.5em;
+    position: relative;
+    overflow: auto;
+}
+
+p{
+    font-weight: 400;
+    top: -1em;
+    font-size: 19px;
+    position: relative;
+    font-weight: 400;
+    color: #808080;
+}

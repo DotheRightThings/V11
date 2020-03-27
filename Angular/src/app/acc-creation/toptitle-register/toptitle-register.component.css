@@ -1,0 +1,18 @@
+.container{
+    height: 9em;
+    width: 100%;
+    left: 0;
+    position: absolute;
+    top: 4.7em;
+    background-color: rgba(24, 101, 172, 1);
+    color: white;
+}
+
+h2{
+    font-weight: 400;
+    font-size: 32px;
+    left: 3.7em;
+    position: absolute;
+    top: 1em;
+    font-weight: 400;
+}
