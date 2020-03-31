@@ -13,7 +13,6 @@ export class FundsComponent implements OnInit {
 
   constructor(private userdataservice: UserDataService, private router: Router) { }
 
-  @Input() fund;
 
   ngOnInit() { 
     this.userdataservice.getFundsList().subscribe(data => {

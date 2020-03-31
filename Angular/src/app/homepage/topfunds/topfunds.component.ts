@@ -6,5 +6,4 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./topfunds.component.css']
 })
 export class TopfundsComponent {
-  @Input() fund;
 }
