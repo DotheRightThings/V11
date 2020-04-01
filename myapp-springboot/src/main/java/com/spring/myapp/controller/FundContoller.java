@@ -13,7 +13,7 @@ import com.spring.myapp.model.Fund;
 import com.spring.myapp.repositories.FundRepository;
 
 @RestController
-@CrossOrigin(origins = "localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200")
 public class FundContoller {
 	
 	@Autowired

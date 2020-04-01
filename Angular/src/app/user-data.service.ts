@@ -11,7 +11,7 @@ export class UserDataService {
   private baseUrl: string;
 
   constructor(private http: HttpClient) {
-    this.baseUrl = 'http://localhost:8082/funds';
+    this.baseUrl = 'http://localhost:8080/funds';
   }
 
   private data = [];

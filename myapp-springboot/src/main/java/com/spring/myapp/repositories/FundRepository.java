@@ -6,6 +6,4 @@ import org.springframework.stereotype.Repository;
 import com.spring.myapp.model.Fund;
 
 @Repository
-public interface FundRepository extends CrudRepository<Fund, Long>{
-
-}
+public interface FundRepository extends CrudRepository<Fund, Long>{}
