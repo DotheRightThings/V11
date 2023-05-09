@@ -23,7 +23,7 @@
     "@angular/router": "~9.0.3",
     "@vicoders/reactive-form": "^1.0.121",
     "bootstrap": "^3.4.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "ng-zorro-antd": "^8.5.2",
     "ngx-bootstrap": "^5.5.0",
     "ngx-daterange": "^1.0.19",
